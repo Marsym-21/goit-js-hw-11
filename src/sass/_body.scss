@@ -1,10 +1,12 @@
 .search-form {
   display: flex;
   align-items: center;
+  position: fixed;
   justify-content: center;
   background-color: #008b8b;
   padding-top: 10px;
   padding-bottom: 10px;
+  width: 100%;
 }
 .search-form_input {
   border-radius: 4px;
@@ -17,7 +19,7 @@ button {
   border-radius: 4px;
   padding: 2px;
 }
-.photo_gallery {
+.gallery {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

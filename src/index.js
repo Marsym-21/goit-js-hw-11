@@ -1,5 +1,7 @@
 import API1 from './get-photo-url';
 import API2 from './get-photo-container';
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const form = document.querySelector('.search-form');
 form.addEventListener('input', getValue);
@@ -16,7 +18,6 @@ function getPhoto(event) {
   event.preventDefault();
   API1.fetchPhotos(formData.searchQuery)
     .then(photo => {
-      //   console.log(photo);
       API2.getPhotocontainer(photo);
     })
     .catch(error => {
@@ -26,3 +27,8 @@ function getPhoto(event) {
       //   );
     });
 }
+
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});

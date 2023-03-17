@@ -1,16 +1,14 @@
 function getPhotocontainer(photo) {
-  console.log(photo.hits);
   const body = document.querySelector('body');
   const gallery = document.createElement('div');
-  gallery.classList.add('photo_gallery');
-
+  gallery.classList.add('gallery');
   body.append(gallery);
 
   const galarryArray = photo.hits
     .map(
       element =>
         `<div class="photo-card">
-      <img src="${element.webformatURL}" alt="${photo.tags}" loading="lazy" />
+      <a href = "${element.largeImageURL}" ><img src="${element.webformatURL}" alt="${photo.tags}" loading="lazy" /></a>
       <div class="info">
         <p class="info-item">
           <b>Likes:${element.likes}</b>

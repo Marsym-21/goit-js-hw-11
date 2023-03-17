@@ -6,12 +6,14 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: fixed;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   background-color: #008b8b;
   padding-top: 10px;
   padding-bottom: 10px;
+  width: 100%;
 }
 
 .search-form_input {
@@ -31,7 +33,7 @@ button {
   padding: 2px;
 }
 
-.photo_gallery {
+.gallery {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
