@@ -1,0 +1,47 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+.search-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #008b8b;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.search-form_input {
+  border-radius: 4px;
+  height: 30px;
+}
+
+button {
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+.photo_gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.photo-card {
+  width: 640px;
+}/*# sourceMappingURL=index.css.map */
