@@ -18,12 +18,34 @@ button {
   align-items: center;
   border-radius: 4px;
   padding: 2px;
+  cursor: pointer;
 }
 .gallery {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
-.photo-card {
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: black;
+}
+a {
+  text-decoration: none;
+}
+.gallery__image {
   width: 640px;
+  height: 430px;
+}
+.load-more {
+  margin: 0 auto;
+  align-items: center;
+  border-radius: 4px;
+  padding: 2px;
+  height: 30px;
+  cursor: pointer;
+}
+.hidden {
+  visibility: hidden;
 }

@@ -31,19 +31,51 @@ button {
           align-items: center;
   border-radius: 4px;
   padding: 2px;
+  cursor: pointer;
 }
 
 .gallery {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
-.photo-card {
+.info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+.gallery__image {
   width: 640px;
+  height: 430px;
+}
+
+.load-more {
+  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 4px;
+  padding: 2px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.hidden {
+  visibility: hidden;
 }/*# sourceMappingURL=index.css.map */
