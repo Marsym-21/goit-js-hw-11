@@ -1,7 +1,8 @@
 import API1 from './get-photo-url';
 import API2 from './get-photo-container';
 import API3 from './create-gallery';
-import API4 from './counter-photos';
+
+import Notiflix from 'notiflix';
 
 const btnMore = document.querySelector('.load-more');
 btnMore.classList.add('hidden');
@@ -27,7 +28,10 @@ function getPhoto(event) {
   API1.fetchPhotos(formData.searchQuery)
     .then(photo => {
       API2.getPhotocontainer(photo);
-      API4.counterPhotos(photo);
+      API1.counterPhotos(photo);
+      return Notiflix.Notify.success(
+        `Hooray! We found ${photo.totalHits} images.`
+      );
     })
     .catch(error => {
       console.log(error);
@@ -38,7 +42,7 @@ function morePhoto() {
   API1.fetchPhotos(formData.searchQuery)
     .then(photo => {
       API2.getPhotocontainer(photo);
-      API4.counterPhotos(photo);
+      API1.counterPhotos(photo);
     })
     .catch(error => {
       console.log(error);
