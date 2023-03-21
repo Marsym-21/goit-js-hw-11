@@ -1,7 +1,6 @@
 import API1 from './get-photo-url';
 import API2 from './get-photo-container';
 import API3 from './create-gallery';
-
 import Notiflix from 'notiflix';
 
 const btnMore = document.querySelector('.load-more');
