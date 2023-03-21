@@ -21,7 +21,8 @@ async function fetchPhotos(name) {
   const SETTINGS = `&image_type=photo&per_page=${perPage}&page=${page}&orientation=horizontal&safesearch=true`;
   try {
     const response = await axios.get(`${BASE_URL}${name}${SETTINGS}`);
-    const photo = await response.json();
+    console.log(response);
+    const photo = await response.data;
     page += 1;
     return photo;
   } catch (error) {
