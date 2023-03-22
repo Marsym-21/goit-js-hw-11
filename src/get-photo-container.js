@@ -3,6 +3,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import Notiflix from 'notiflix';
 
 function getPhotocontainer(photo) {
+  console.log(photo);
   const body = document.querySelector('body');
   const gallery = document.querySelector('.gallery');
   const galleryArray = photo.hits

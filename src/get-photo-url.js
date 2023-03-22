@@ -7,9 +7,18 @@ const perPage = 40;
 let page = 1;
 let totalHits;
 const btnMore = document.querySelector('.load-more');
+
 function counterPhotos(photo) {
   totalHits = photo.totalHits;
-  const hits = perPage * (page - 1);
+  let hits;
+  if (photo.total === totalHits) {
+    hits = photo.total * page;
+  } else {
+    hits = perPage * page;
+  }
+  console.log(page);
+  console.log(hits);
+  console.log(totalHits);
   if (hits > totalHits) {
     btnMore.classList.add('hidden');
     return Notiflix.Notify.failure(
@@ -18,15 +27,26 @@ function counterPhotos(photo) {
   }
 }
 async function fetchPhotos(name) {
+  page = 1;
   const SETTINGS = `&image_type=photo&per_page=${perPage}&page=${page}&orientation=horizontal&safesearch=true`;
   try {
     const response = await axios.get(`${BASE_URL}${name}${SETTINGS}`);
     const photo = await response.data;
-    page += 1;
     return photo;
   } catch (error) {
     console.log(error);
   }
 }
+async function fetchMorePhotos(name) {
+  page += 1;
+  const SETTINGS = `&image_type=photo&per_page=${perPage}&page=${page}&orientation=horizontal&safesearch=true`;
+  try {
+    const response = await axios.get(`${BASE_URL}${name}${SETTINGS}`);
+    const photo = await response.data;
 
-export default { fetchPhotos, counterPhotos };
+    return photo;
+  } catch (error) {
+    console.log(error);
+  }
+}
+export default { fetchPhotos, counterPhotos, fetchMorePhotos };

@@ -21,8 +21,14 @@ function getValue(event) {
 
 function getPhoto(event) {
   event.preventDefault();
+
+  if (formData.searchQuery.trim() === '') {
+    API3.gallery.innerHTML = '';
+    return Notiflix.Notify.failure(
+      'Sorry, there are no images matching your search query. Please try again.'
+    );
+  }
   API3.gallery.innerHTML = '';
-  API1.page = 1;
   btnMore.classList.remove('hidden');
   API1.fetchPhotos(formData.searchQuery)
     .then(photo => {
@@ -38,7 +44,7 @@ function getPhoto(event) {
 }
 
 function morePhoto() {
-  API1.fetchPhotos(formData.searchQuery)
+  API1.fetchMorePhotos(formData.searchQuery)
     .then(photo => {
       API2.getPhotocontainer(photo);
       API1.counterPhotos(photo);
