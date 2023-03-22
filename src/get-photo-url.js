@@ -16,9 +16,10 @@ function counterPhotos(photo) {
   } else {
     hits = perPage * page;
   }
-  console.log(page);
-  console.log(hits);
-  console.log(totalHits);
+  if (hits < perPage) {
+    btnMore.classList.add('hidden');
+  }
+
   if (hits > totalHits) {
     btnMore.classList.add('hidden');
     return Notiflix.Notify.failure(
