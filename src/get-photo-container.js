@@ -31,7 +31,7 @@ function getPhotocontainer(photo) {
       'Sorry, there are no images matching your search query. Please try again.'
     );
   } else {
-    gallery.insertAdjacentHTML('afterbegin', galleryArray);
+    gallery.insertAdjacentHTML('beforeend', galleryArray);
 
     const lightbox = new SimpleLightbox('.gallery a', {
       captionDelay: 250,
